@@ -7,7 +7,6 @@
 		<groupId>com.hazelcast</groupId>
 		<artifactId>hazelcast-root</artifactId>
 		<version>2.5</version>
-		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<name>hazelcast-monitor</name>
