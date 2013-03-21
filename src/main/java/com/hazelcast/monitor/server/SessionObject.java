@@ -17,8 +17,10 @@
 
 package com.hazelcast.monitor.server;
 
+import com.hazelcast.client.ClientConfig;
 import com.hazelcast.client.HazelcastClient;
 import com.hazelcast.client.NoMemberAvailableException;
+import com.hazelcast.config.GroupConfig;
 import com.hazelcast.core.*;
 import com.hazelcast.monitor.client.ClusterView;
 import com.hazelcast.monitor.client.ConnectionExceptoin;
@@ -149,7 +151,10 @@ public class SessionObject {
         try {
             String[] addresses = splitAddresses(ips);
             if (addresses.length > 0) {
-                client = HazelcastClient.newHazelcastClient(name, pass, addresses[0]);
+            	ClientConfig conf = new ClientConfig();
+            	conf.setAddresses(Arrays.asList(addresses));
+            	conf.setGroupConfig(new GroupConfig(name, pass));
+                client = HazelcastClient.newHazelcastClient(conf);
             } else {
                 throw new ConnectionExceptoin("Not a valid address");
             }
