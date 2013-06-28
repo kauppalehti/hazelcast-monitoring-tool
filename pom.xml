@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.hazelcast</groupId>
 		<artifactId>hazelcast-root</artifactId>
-		<version>2.5</version>
+		<version>2.6</version>
 	</parent>
 
 	<name>hazelcast-monitor</name>
@@ -31,7 +31,6 @@
 			</snapshots>
 		</repository>
 	</repositories>
-
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -169,7 +168,6 @@
 						<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
 					</archive>
 				</configuration>
-
 			</plugin>
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
@@ -189,10 +187,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-
-
 	</build>
-
 
 	<pluginRepositories>
 		<pluginRepository>
